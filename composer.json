@@ -13,7 +13,10 @@
   "autoload": {
     "psr-4": {
       "Nip\\Config\\": "src"
-    }
+    },
+    "files": [
+      "src/functions/helpers.php"
+    ]
   },
   "autoload-dev": {
     "psr-4": {
