@@ -1,6 +1,9 @@
 <?php
 
+use Nip\Container\Container;
+
 if (!function_exists('config')) {
+
     /**
      * Get / set the specified configuration value.
      *
@@ -12,13 +15,25 @@ if (!function_exists('config')) {
      */
     function config($key = null, $default = null)
     {
-        if (is_null($key)) {
-            return app('config');
-        }
-        if (is_array($key)) {
-            return app('config')->set($key);
+        $container = function_exists('app') ? app() : Container::getInstance();
+        if (!$container) {
+            /** @noinspection PhpUnhandledExceptionInspection */
+            throw new Exception("No container was found for config function");
         }
 
-        return app('config')->get($key, $default);
+        $config = $container->get('config');
+        if (!$config) {
+            /** @noinspection PhpUnhandledExceptionInspection */
+            throw new Exception("No Config was found in the container");
+        }
+
+        if (is_null($key)) {
+            return $config;
+        }
+        if (is_array($key)) {
+            return $config->set($key);
+        }
+
+        return $config->get($key, $default);
     }
 }
