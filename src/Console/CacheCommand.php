@@ -27,12 +27,11 @@ class CacheCommand extends Command
      */
     protected function handle()
     {
-        $command = $this->getApplication()->find('config:clear');
-        $returnCode = $command->run((new ArrayInput([])), $this->output);
+        $this->call('config:clear');
 
         $config = $this->getFreshConfiguration();
 
-        $app = Container::getInstance()->get('app');
+        $app = $this->getByticApp();
         $configPath = $app->getCachedConfigPath();
 
         file_put_contents(

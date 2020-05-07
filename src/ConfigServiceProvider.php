@@ -2,10 +2,8 @@
 
 namespace Nip\Config;
 
-use Bytic\Scheduler\Console\ListCommand;
-use Bytic\Scheduler\Console\PublishCommand;
-use Bytic\Scheduler\Console\RunEventCommand;
-use Bytic\Scheduler\Drivers\CrontabDriver;
+use Nip\Config\Console\CacheCommand;
+use Nip\Config\Console\ClearCommand;
 use Nip\Container\ServiceProviders\Providers\AbstractSignatureServiceProvider;
 
 /**
@@ -32,9 +30,8 @@ class ConfigServiceProvider extends AbstractSignatureServiceProvider
     protected function registerCommands()
     {
         $this->commands(
-            ListCommand::class,
-            PublishCommand::class,
-            RunEventCommand::class
+            CacheCommand::class,
+            ClearCommand::class
         );
     }
 }

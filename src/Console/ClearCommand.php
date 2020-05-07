@@ -3,9 +3,6 @@
 namespace Nip\Config\Console;
 
 use ByTIC\Console\Command;
-use Nip\Container\Container;
-use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Output\OutputInterface;
 
 /**
  * Class ClearCommand
@@ -24,9 +21,10 @@ class ClearCommand extends Command
      */
     protected function handle()
     {
-        $app = Container::getInstance()->get('app');
+        $app = $this->getByticApp();
         if ($app->configurationIsCached()) {
             $path = $app->getCachedConfigPath();
+            unlink($path);
 
             $this->info('Configuration cache cleared!');
             return;
