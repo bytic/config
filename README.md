@@ -11,3 +11,7 @@ ByTIC Config component
 [![Quality Score](https://img.shields.io/scrutinizer/g/bytic/config.svg?style=flat-square)](https://scrutinizer-ci.com/g/bytic/config)
 [![StyleCI](https://styleci.io/repos/119902214/shield?branch=master)](https://styleci.io/repos/119902214)
 [![Total Downloads](https://img.shields.io/packagist/dt/bytic/config.svg?style=flat-square)](https://packagist.org/packages/bytic/config)
+
+
+# Inspiration
+* https://github.com/caseyamcl/configula
