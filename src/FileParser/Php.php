@@ -28,10 +28,9 @@ class Php extends AbstractFileParser
             $temp = require $path;
         } catch (Exception $exception) {
             throw new ParseException(
-                [
-                    'message' => 'PHP file threw an exception',
-                    'exception' => $exception,
-                ]
+                'PHP file threw an exception in ' . $path,
+                null,
+                $exception,
             );
         }
 
