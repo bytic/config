@@ -6,7 +6,6 @@ use ByTIC\Console\Command;
 use Exception;
 use LogicException;
 use Nip\Container\Container;
-use Symfony\Component\Console\Input\ArrayInput;
 use Throwable;
 
 /**
@@ -15,7 +14,7 @@ use Throwable;
  */
 class CacheCommand extends Command
 {
-    protected function configure()
+    protected function configure(): void
     {
         parent::configure();
         $this->setName('config:cache');

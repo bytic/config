@@ -10,7 +10,7 @@ use ByTIC\Console\Command;
  */
 class ClearCommand extends Command
 {
-    protected function configure()
+    protected function configure(): void
     {
         parent::configure();
         $this->setName('config:clear');
