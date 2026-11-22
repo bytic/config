@@ -26,21 +26,13 @@
   },
   "require": {
     "php": "^8.0",
-    "symfony/config": "^5.0|^6.0|^7.0"
+    "symfony/config": "^5.0|^6.0|^7.0|^8.0"
   },
   "require-dev": {
     "bytic/container": "^0.9|^1.0|^2.0",
     "bytic/console": "^1.0|^2.0",
-    "bytic/phpqatools": "^1.0"
+    "phpunit/phpunit": "^9.6"
   },
   "prefer-stable": true,
-  "minimum-stability": "dev",
-  "config": {
-    "allow-plugins": {
-      "phpstan/extension-installer": true,
-      "ergebnis/composer-normalize": true,
-      "dealerdirect/phpcodesniffer-composer-installer": true,
-      "bytic/phpqatools": true
-    }
-  }
+  "minimum-stability": "dev"
 }
